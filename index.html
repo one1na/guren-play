@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="在断脊岭修炼、炼蛊、赶路与交谈，经历一个蛊师的一世。墨色古卷风格的回合制修仙 Roguelike。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='3' fill='%23b4342a'/%3E%3C/svg%3E" />
+    <title>蛊真人 · 回合制蛊虫</title>
+    <script>
+      // 宿主熵源：整站唯一读取宿主随机源的地方。
+      //
+      // `src/**` 被 test/ironlaw.test.ts 静态禁止宿主随机源与时钟，
+      // 所以这里由 HTML（宿主边界）注入取种子的钩子，src/ 只负责调用与兜底，
+      // 自己一行随机数都没有。种子随后会显示给玩家，可用同一颗种子复现这一局。
+      window.__gurenHostSeed = function () {
+        var buf = new Uint32Array(1);
+        globalThis.crypto.getRandomValues(buf);
+        return buf[0] >>> 0;
+      };
+    </script>
+    <script type="module" crossorigin src="./assets/main-Dkb4p7sn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BFLbGPWj.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>这一局需要 JavaScript：所有结算都在浏览器里跑，没有服务端。</noscript>
+  </body>
+</html>
